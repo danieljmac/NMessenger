@@ -774,12 +774,12 @@ extension NMessenger: ASTableDelegate, ASTableDataSource {
             if (indexPath as NSIndexPath).row >= self.state.cellBufferStartIndex {
                 return self.state.cellBuffer[(indexPath as NSIndexPath).row - self.state.cellBufferStartIndex]
             }
-            if let nodeForRow = tableView.nodeForRow(at: indexPath) {
+            /*if let nodeForRow = tableView.nodeForRow(at: indexPath) {
                 return nodeForRow
             } else {
                 return ASCellNode()
-            }
-            //return tableView.nodeForRow(at: indexPath)!
+            }*/
+            return tableView.nodeForRow(at: indexPath)!
         case NMessengerSection.typingIndicator.rawValue:
             return self.state.typingIndicators[(indexPath as NSIndexPath).row]
         default: //should never come here
