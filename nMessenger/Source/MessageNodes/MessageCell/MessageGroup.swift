@@ -296,6 +296,7 @@ open class MessageGroup: GeneralMessengerCell {
             self.transitionLayout(withAnimation: true, shouldMeasureAsync: false, measurementCompletion: nil)
         } else {
             self.messages.append(message)
+            self.callLayoutCompletionBlock()
         }
     }
     
